@@ -31,5 +31,11 @@
   			<!-- 내 제품에 lombok을 포함시키지 않고 플랫폼상에서 준비한 lombok을 이용하겠다는 의미이다. -->
   			<scope>provided</scope>
   		</dependency>
+  		<dependency>
+  			<!-- AOP를 위한 dependency -->
+  			<groupId>org.aspectj</groupId>
+  			<artifactId>aspectjweaver</artifactId>
+  			<version>1.9.9.1</version>
+  		</dependency>
   	</dependencies>
 </project>
