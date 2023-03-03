@@ -1,0 +1,32 @@
+<!-- pom.xml에서는 내 pc에 local repository를 형성한다. -->
+<project xmlns='http://maven.apache.org/POM/4.0.0' 
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+	xsi:schemaLocation='http://maven.apache.org/POM/4.0.0 
+		https://maven.apache.org/xsd/maven-4.0.0.xsd'>
+	<modelVersion>4.0.0</modelVersion>
+	
+  	<!-- 수많은 제품들 중에 내 제품을 구별해 낼 수 있는 인자 3가지. -->
+ 	<groupId>com.my</groupId>
+  	<artifactId>spring.core</artifactId>
+  	<version>1.0</version>
+  	
+  	<properties>
+  		<!-- property name은 내가 자유롭게 정한다. ~spring.ver로 설정. -->
+  		<spring.ver>5.3.22</spring.ver>
+  	</properties>
+  	
+  	<dependencies><!-- 여기서 dependency는 library를 지칭한다. -->
+  		<dependency>
+  			<groupId>org.springframework</groupId>
+  			<artifactId>spring-context</artifactId>
+  			<version>${spring.ver}</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.projectlombok</groupId>
+  			<artifactId>lombok</artifactId>
+  			<version>1.18.24</version>
+  			<!-- 내 제품에 lombok을 포함시키지 않고 플랫폼상에서 준비한 lombok을 이용하겠다는 의미이다. -->
+  			<scope>provided</scope>
+  		</dependency>
+  	</dependencies>
+</project>
