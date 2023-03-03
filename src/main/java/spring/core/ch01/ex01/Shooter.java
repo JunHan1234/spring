@@ -8,7 +8,7 @@ public class Shooter {
 		this.gun = gun;
 	}
 	
-	//setter 이용한 DI.
+	//setter method 이용한 DI.
 	public void setGun(Gun gun) {
 		this.gun = gun;
 	}

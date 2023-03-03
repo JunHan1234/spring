@@ -1,4 +1,5 @@
 <!-- pom.xml에서는 내 pc에 local repository를 형성한다. -->
+<!-- remote repository는 https://mvnrepository.com/ -->
 <project xmlns='http://maven.apache.org/POM/4.0.0' 
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
 	xsi:schemaLocation='http://maven.apache.org/POM/4.0.0 
