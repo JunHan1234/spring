@@ -16,6 +16,8 @@
   	</properties>
   	
   	<dependencies><!-- 여기서 dependency는 library를 지칭한다. -->
+  		<!-- library를 추가시키면,
+  			 자동으로 상호호환되는 버전의 필요한 library를 추가해준다. -->
   		<dependency>
   			<groupId>org.springframework</groupId>
   			<artifactId>spring-context</artifactId>
