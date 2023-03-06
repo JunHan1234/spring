@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Timer { //ex02 예제의 AOP에서 Timer로 만들어진 bean이 aspect이다.
 	// advise가 어디 붙을지 결정해주는 것. pointcut.
-	@Pointcut("execution(public * spring.core.ch02.ex02..*(..)") //..은 0개 이상을 뜻한다. *는 모든(all) return type, 모든(all) method.
+	@Pointcut("execution(public * spring.core.ch02.ex02..*(..))") //..은 0개 이상을 뜻한다. *는 모든(all) return type, 모든(all) method.
 	private void myPointcut() {}
 	
 	// AOP에서 Object clock을 advise라고 부른다. (주종관계에서 종)
@@ -20,13 +20,14 @@ public class Timer { //ex02 예제의 AOP에서 Timer로 만들어진 bean이 as
 	// 주와 종이 결합하여 같이 실행되는 지점을 뜻한다. (종이 주의 앞에 올지 뒤에 올지 지점을 정한다.)
 	@Around("myPointcut()")
 	public Object clock(ProceedingJoinPoint jp) throws Throwable {
-		System.out.println(jp.getSignature()); //joinpoint 이름 출력
+		//실행결과: public * spring.core.ch02.ex02..*(..))에 대한 결과값 == Result(리턴타입) spring.core.ch02.ex02.Calculator.calc()
+		System.out.println(jp.getSignature()); //joinpoint 실행 전, joinpoint의 이름 출력.
 		
-		long start = System.currentTimeMillis();
+		long start = System.currentTimeMillis(); //joinpoint 전에 작동.
 		Result result = (Result)jp.proceed(); //joinpoint 작동. (calc method가 작동)
-		long end = System.currentTimeMillis();
+		long end = System.currentTimeMillis(); //joinpoint 후에 작동. 전후 작동. 이래서 around.
 		
-		System.out.println("경과시간: " + (end - start));
+		System.out.println("경과시간: " + (end - start)); //joinpoint 실행 후, 출력 메세지.
 		
 		result.setResult(result.getResult() + "(clock)");
 		return result;

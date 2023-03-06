@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Configuration>
+	<!-- appender는 출력장치이다. -->
+	<Appenders>
+		<Console name='console' target='SYSTEM_OUT'>
+			<PatternLayout />
+		</Console>
+		<RollingFile name='file' fileName='c:/DEV/spring.core.log'
+			filePattern='c:/DEV/spring.core.%d{yyyy-MM-dd-HH-mm-ss}.log' append='true'> <!-- append를 해야 덮어쓰지않고, 다음줄에 추가한다. -->
+			<PatternLayout pattern='[%-5p: %d{yyyy/MM/dd HH:mm:ss}] %m%n'/> <!-- %m%n: message별로 줄바꿈. -->
+			<Policies>
+				<!-- 파일을 새로 만드는 간격(백업주기). 24시간(86400초).-->
+				<TimeBasedTriggeringPolicy interval='86400'/>
+			</Policies>
+			</RollingFile>
+	</Appenders>
+	
+	<!-- log수준을 표현한다.(info error fatal 등) -->
+	<Loggers>
+		<!-- 설정한 수준 이상만 찍는다. -->
+		<Root level='info'>
+			<!-- log를 찍을 위치 설정. -->
+			<AppenderRef ref='console' />
+			<AppenderRef ref='file'/>
+		</Root>
+	</Loggers>
+</Configuration>
