@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class Lion implements InitializingBean, DisposableBean {
 	//InitializingBean 에서 상속받은 method.
-	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("lion is born.");
 	}
@@ -18,7 +17,6 @@ public class Lion implements InitializingBean, DisposableBean {
 	}
 	
 	//DisposableBean 에서 상속받은 method.
-	@Override
 	public void destroy() throws Exception {
 		System.out.println("lion is dead.");
 	}
