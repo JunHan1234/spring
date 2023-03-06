@@ -6,7 +6,7 @@
 	
 	<!-- Shooter를 탄생시킨다, Gun을 탄생시킨다 new Shooter, new Gun
 		 => 이 탄생작업을 IoC로 (중앙에서 control하여 생성하고, spring container에서 꺼내씀.) 한다. -->
-	<!-- 객체를 콩으로 비유해서 표현. 과거의 방법. -->
+	<!-- 객체를 콩으로 비유해서 표현. 과거의 방법~ bean tag 이용. -->
 	<bean id='pistol' class='spring.core.ch01.ex01.Pistol'/> <!-- container가 pistol의 탄생에서 죽음까지 관리. 이것이 IoC이다. -->
 	<bean id='rifle' class='spring.core.ch01.ex01.Rifle'/> <!-- container에 rifle bean도 담는다. -->
 	
