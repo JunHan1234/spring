@@ -22,7 +22,7 @@ public class MyLogger {
 	public void log(JoinPoint jp) {
 		logger.info(jp.toShortString());
 	}
-	//AfterReturning의 반대.
+	//AfterReturning의 반대. joinpoint가 실행 실패할 경우 AfterThrowing실행.
 	@AfterThrowing(pointcut="@annotation(spring.core.ch02.ex04.Log)", throwing="ex")
 	public void logError(JoinPoint jp, Throwable ex) { //throwing = Throwable 변수명 일치해야함.
 		logger.error(jp.toLongString() + ": " + ex.getMessage());

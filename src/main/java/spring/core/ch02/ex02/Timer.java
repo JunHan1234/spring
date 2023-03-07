@@ -24,7 +24,7 @@ public class Timer { //ex02 예제의 AOP에서 Timer로 만들어진 bean이 as
 		System.out.println(jp.getSignature()); //joinpoint 실행 전, joinpoint의 이름 출력.
 		
 		long start = System.currentTimeMillis(); //joinpoint 전에 작동.
-		Result result = (Result)jp.proceed(); //joinpoint 작동. (calc method가 작동)
+		Result result = (Result)jp.proceed(); //joinpoint 작동. (calc, sleep method가 작동)
 		long end = System.currentTimeMillis(); //joinpoint 후에 작동. 전후 작동. 이래서 around.
 		
 		System.out.println("경과시간: " + (end - start)); //joinpoint 실행 후, 출력 메세지.
